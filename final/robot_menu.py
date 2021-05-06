@@ -23,6 +23,10 @@ def yoga_teacher():
 @ask.intent('YogaStudent')
 def yoga_student():
     speech_text = 'Connecting to class'
+    try:
+            robot_chat_server_client.simple_card('My Robot', speec_text)
+    except:
+            print("issues connecting to class")
     return statement(speech_text).simple_card('My Robot', speech_text)
 @ask.intent('wander')
 def wander():
